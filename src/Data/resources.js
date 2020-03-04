@@ -40,12 +40,12 @@ filters.resourceContainsOnlyPrograms = programs => {
 // TODO - eventually, I should just make all of the filters into factories 
 //        like this one, so the function is declared once per query 
 let filterBirthPlacesFactory = options => {
- 
-    if (!options 
+
+    if (!options
         || !options.birthplaces
-        || (options.birthplaces || []).length < 1){ 
-            return () => true 
-        }
+        || (options.birthplaces || []).length < 1) {
+        return () => true
+    }
 
     return r => {
         let place = options.birthplaces[0];
@@ -54,13 +54,13 @@ let filterBirthPlacesFactory = options => {
         if ((r.birth_place_cities || []).length !== (r.birth_place_countries || []).length) { return false }
 
         for (let j = 0; j < (r.birth_place_cities || []).length; j++) {
-    
+
             let city = r.birth_place_cities[j],
                 country = r.birth_place_countries[j];
             //if (!city || !country ){ return false}
             if (normalizeString(country) !== normalizeString(place.country)) return false;
 
-            if (place.city){
+            if (place.city) {
                 //console.log("There's a city to filter", place)
                 // if there's a city, limit by that as well
                 if (normalizeString(city) !== normalizeString(place.city.split(",")[0])) return false;
@@ -90,7 +90,7 @@ filters.getResources = options => {
     //     return true;
 
     // }
-    
+
     return r => {
 
         // filter by selected subject
@@ -109,29 +109,37 @@ filters.getResources = options => {
                 || recordingYear > options.dateRanges.recording[1]
                 || !recordingYear) { return false }
 
-        } else { 
+        } else {
             // console.log("Skipping recording year filter")
-    }
+        }
 
         // TODO - filter by year of birth
         if (options.dateRanges && options.dateRanges.birth) {
             const birthYears = r.birth_years || [];
+            if (birthYears.length < 1){ return false}
             if (!birthYears.reduce((curr, next) => {
                 if (!curr) { return false }
                 if (!options) { return true };
                 if (!options.dateRanges) { return true };
                 if (!options.dateRanges.birth) { return true }
                 if (next < options.dateRanges.birth[0] || next > options.dateRanges.birth[1]) { return false }
-                return true;
-            }, true)) { return false }
 
-        } else { 
+                // console.log("Birth year filter passed", curr, next, options.dateRanges.birth)
+
+                return true;
+            }, true)) { 
+                return false 
+            } else {
+                // console.log("Birth year filter passed", r)
+            }
+
+        } else {
             // console.log("Skipping birth year filter")
         }
 
-        if (! filterBirthPlaces(r)){ return false}
+        if (!filterBirthPlaces(r)) { return false }
         // if ((options.birthplaces || []).length > 0) {
-            
+
         //     let place = options.birthplaces[0];
 
         //     for (let j = 0; j < (r.birth_place_cities || []).length; j++) {
@@ -188,8 +196,8 @@ filters.getResources = options => {
  */
 // let query = options => all().filter(filters.getResources(options))
 
-function query(options){
-    if (!options){ return all()}
+function query(options) {
+    if (!options) { return all() }
     return all().filter(filters.getResources(options));
 }
 

@@ -103,7 +103,7 @@ export default class extends React.Component {
 
         return (
             <div className="IntroProse">
-                This data dashboard visualizes
+                This visual search tool includes 
             &nbsp;<span className="stat">{numeral(this.props.items.length).format("0,0")} testimonies</span>
                 &nbsp;{this.genderString()}
                 &nbsp;born {this.yearRangeString(this.props.filters.dateRanges.birth || [this.props.BIRTH_MIN, this.props.BIRTH_MAX])}
