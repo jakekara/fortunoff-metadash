@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/metadash/static/css/main.4efb2183.chunk.css",
-    "main.js": "/metadash/static/js/main.cbfc0ad3.chunk.js",
-    "main.js.map": "/metadash/static/js/main.cbfc0ad3.chunk.js.map",
-    "runtime~main.js": "/metadash/static/js/runtime~main.2c6ab6d3.js",
-    "runtime~main.js.map": "/metadash/static/js/runtime~main.2c6ab6d3.js.map",
-    "static/js/2.a3e79b9e.chunk.js": "/metadash/static/js/2.a3e79b9e.chunk.js",
-    "static/js/2.a3e79b9e.chunk.js.map": "/metadash/static/js/2.a3e79b9e.chunk.js.map",
-    "index.html": "/metadash/index.html",
-    "precache-manifest.7583e4420070bc15fa182a871158aa14.js": "/metadash/precache-manifest.7583e4420070bc15fa182a871158aa14.js",
-    "service-worker.js": "/metadash/service-worker.js",
-    "static/css/main.4efb2183.chunk.css.map": "/metadash/static/css/main.4efb2183.chunk.css.map",
-    "static/media/main.scss": "/metadash/static/media/yalenew-roman-webfont.f2b260ad.woff2"
+    "main.css": "/fortunoff-metadash/static/css/main.05bfdb83.chunk.css",
+    "main.js": "/fortunoff-metadash/static/js/main.27987160.chunk.js",
+    "main.js.map": "/fortunoff-metadash/static/js/main.27987160.chunk.js.map",
+    "runtime~main.js": "/fortunoff-metadash/static/js/runtime~main.0a15b005.js",
+    "runtime~main.js.map": "/fortunoff-metadash/static/js/runtime~main.0a15b005.js.map",
+    "static/js/2.a3e79b9e.chunk.js": "/fortunoff-metadash/static/js/2.a3e79b9e.chunk.js",
+    "static/js/2.a3e79b9e.chunk.js.map": "/fortunoff-metadash/static/js/2.a3e79b9e.chunk.js.map",
+    "index.html": "/fortunoff-metadash/index.html",
+    "precache-manifest.cd19d1d3440d9ee3cd4c29e6e1958ae3.js": "/fortunoff-metadash/precache-manifest.cd19d1d3440d9ee3cd4c29e6e1958ae3.js",
+    "service-worker.js": "/fortunoff-metadash/service-worker.js",
+    "static/css/main.05bfdb83.chunk.css.map": "/fortunoff-metadash/static/css/main.05bfdb83.chunk.css.map",
+    "static/media/main.scss": "/fortunoff-metadash/static/media/yalenew-roman-webfont.f2b260ad.woff2"
   }
 }
